@@ -43,5 +43,5 @@ There is only one (optional) parameter; an `options` object. The possible proper
 [appveyor-url]: https://ci.appveyor.com/project/4ver/gulp-path-length/branch/master
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/tradq3vg1hoah36j/branch/master?svg=true
 
-[depstat-url]: https://david-dm.org/4ver/gulp-path-length
-[depstat-image]: https://david-dm.org/4ver/gulp-path-length.svg?style=flat
+[depstat-url]: https://david-dm.org/Teamwork/gulp-path-length
+[depstat-image]: https://david-dm.org/Teamwork/gulp-path-length.svg?style=flat
