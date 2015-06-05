@@ -1,6 +1,6 @@
 {
   "name": "gulp-path-length",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "A Gulp plugin for enforcing a character limit on file paths",
   "main": "index.js",
   "scripts": {
