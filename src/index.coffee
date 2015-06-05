@@ -5,8 +5,7 @@ PluginError = gutil.PluginError
 pluginName = 'gulp-path-length'
 
 
-module.exports = (options) ->
-    options = options ? {}
+module.exports = (options={}) ->
     maxLength = options.maxLength ? 256
     doRewrite = options.rewrite? and options.rewrite.replacement? and options.rewrite.match?
 
