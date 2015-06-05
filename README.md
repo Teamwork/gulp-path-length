@@ -1,7 +1,7 @@
 gulp-path-length 
 ===
 
-[npm badge] [travis badge] [appveyor badge]
+[![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Windows Build Status][appveyor-image]][appveyor-url] [![Dependency Status][depstat-image]][depstat-url] 
 
 ---
 
@@ -32,3 +32,16 @@ This will stop the build with an error if you've an overly long path. I've passe
 There is only one (optional) parameter; an `options` object. The possible properties it can contain are:
 - `maxLength` - defaults to `256`
 - `rewrites` - This is an optional object which contains mappings between directories. So for example, you could have `{'./example/path/to/directory/': 'C:\\Program Files (x86)\\abc'}`. Then when the plugin goes to check the file `./example/path/to/directory/x.txt`, it will actually check `C:\Program Files (x86)\abc\x.txt`. The keys and values can be relative or absolute paths.
+
+
+[npm-url]: https://npmjs.org/package/gulp-path-length
+[npm-image]: http://img.shields.io/npm/v/gulp-path-length.svg?style=flat
+
+[travis-url]: http://travis-ci.org/4ver/gulp-path-length
+[travis-image]: http://img.shields.io/travis/4ver/gulp-path-length.svg?style=flat
+
+[appveyor-url]: https://ci.appveyor.com/project/4ver/gulp-path-length/branch/master
+[appveyor-image]: https://ci.appveyor.com/api/projects/status/tradq3vg1hoah36j/branch/master?svg=true
+
+[depstat-url]: https://david-dm.org/4ver/gulp-path-length
+[depstat-image]: https://david-dm.org/4ver/gulp-path-length.svg?style=flat
