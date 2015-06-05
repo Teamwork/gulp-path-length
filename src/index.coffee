@@ -24,9 +24,13 @@ module.exports = (options={}) ->
             cb new PluginError pluginName, 'Streaming not supported'
             return
 
-        if file.path.length > maxLength
-            cb new PluginError pluginName, "File '#{file.path}' path length greater than #{maxLength}"
+        filePath = file.path
+
+        if doRewrite
+            filePath = filePath.replace rewriteMatch, rewriteReplacement
+
+        if filePath.length > maxLength
+            cb new PluginError pluginName, "File '#{filePath}' path length greater than #{maxLength}"
             return
 
-        @push(file)
-        cb()
+        cb null, file
