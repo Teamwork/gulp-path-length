@@ -10,7 +10,8 @@ module.exports = (options={}) ->
     doRewrite = options.rewrite? and options.rewrite.replacement? and options.rewrite.match?
 
     if doRewrite
-        options.rewrite.match = path.resolve options.rewrite.match
+        rewriteMatch = path.resolve options.rewrite.match
+        rewriteReplacement = options.rewrite.replacement
 
     through.obj (file, enc, cb) ->
         # pass through null files
