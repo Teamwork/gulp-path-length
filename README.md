@@ -37,8 +37,8 @@ There is only one (optional) parameter; an `options` object. The possible proper
 [npm-url]: https://npmjs.org/package/gulp-path-length
 [npm-image]: http://img.shields.io/npm/v/gulp-path-length.svg?style=flat
 
-[travis-url]: http://travis-ci.org/4ver/gulp-path-length
-[travis-image]: http://img.shields.io/travis/4ver/gulp-path-length.svg?style=flat
+[travis-url]: http://travis-ci.org/teamwork/gulp-path-length
+[travis-image]: http://img.shields.io/travis/teamwork/gulp-path-length.svg?style=flat
 
 [appveyor-url]: https://ci.appveyor.com/project/4ver/gulp-path-length/branch/master
 [appveyor-image]: https://ci.appveyor.com/api/projects/status/tradq3vg1hoah36j/branch/master?svg=true
