@@ -14,15 +14,18 @@ module.exports = (options={}) ->
         rewriteReplacement = options.rewrite.replacement
 
     through.obj (file, enc, cb) ->
-        # pass through null files
-        if file.isNull()
-            cb null, file
-            return
+
+        if options.rewrite?
+            if options.rewrite.replacement? and not options.rewrite.match?
+                return cb new PluginError pluginName, 'Required option not set: "rewrite.match"'
+
+            if options.rewrite.match? and not options.rewrite.replacement?
+                return cb new PluginError pluginName, 'Required option not set: "rewrite.replacement"'
 
         # don't support stream for now
         if file.isStream()
-            cb new PluginError pluginName, 'Streaming not supported'
-            return
+            returncb new PluginError pluginName, 'Streaming not supported'
+
 
         filePath = file.path
 
@@ -30,7 +33,6 @@ module.exports = (options={}) ->
             filePath = filePath.replace rewriteMatch, rewriteReplacement
 
         if filePath.length > maxLength
-            cb new PluginError pluginName, "File '#{filePath}' path length greater than #{maxLength}"
-            return
+            return cb new PluginError pluginName, "File '#{filePath}' path length greater than #{maxLength}"
 
         cb null, file
