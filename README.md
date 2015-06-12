@@ -31,14 +31,18 @@ This will stop the build with an error if you've an overly long path. I've passe
 
 There is only one (optional) parameter; an `options` object. The possible properties it can contain are:
 - `maxLength` - defaults to `256`
-- `rewrites` - This is an optional object which should contain `match` and  `replacement` properties which contains mappings between directories. So for example:
+- `rewrite` - This is an optional object which should contain `match` and  `replacement` properties which contains mappings between directories. So for example:
 ```
-rewrites: {
+rewrite: {
     match: './example/path/to/directory/',
     replacement: 'C:\\Program Files (x86)\\abc'
 }
 ```
-When the plugin goes to check the file `./example/path/to/directory/x.txt`, it will actually check `C:\Program Files (x86)\abc\x.txt`. The keys and values can be relative or absolute paths.
+
+When the plugin goes to check the file `./example/path/to/directory/x.txt`, it will actually check `C:\Program Files (x86)\abc\x.txt`. 
+
+- `rewrite.match` accepts a path to resolve (like `./example`), relative (`example/a`) or absolute paths (`C:\a`). 
+- `rewrite.replacement` only accepts an absolute path.
 
 
 [npm-url]: https://npmjs.org/package/gulp-path-length
