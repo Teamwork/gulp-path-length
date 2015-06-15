@@ -2,6 +2,7 @@ chai = require 'chai'
 expect = chai.expect
 should = chai.should()
 pathLength = require '../src/'
+rewritePath = require '../src/rewrite'
 gutil = require 'gulp-util'
 File = gutil.File
 fs = require 'vinyl-fs'
@@ -86,7 +87,22 @@ describe 'gulp-path-length', =>
 
         testWithDummyFiles {options, cb, onData}
 
+    it 'should rewrite absolute unix paths correctly', () ->
+        filePath = rewritePath('/a/b/c/d.txt', '/a/b', '/x/y')
 
+        expect(filePath).to.equal '/x/y/c/d.txt'
+
+    it 'should rewrite relative unix paths correctly', () ->
+        filePath = path.resolve './dummyfiles/text1.txt'
+        filePath = rewritePath(filePath, './dummyfiles', '/x/y')
+
+    it 'should rewrite relative unix paths correctly', () ->
+        filePath = path.resolve './dummyfiles/text1.txt'
+        filePath = rewritePath(filePath, './dummyfiles', '/x/y')
+
+
+
+        expect(filePath).to.equal '/x/y/text1.txt'
 
 
 testWithDummyFiles = ({options, shouldPass, done, cb, onData}) ->
